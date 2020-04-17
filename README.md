@@ -1,8 +1,12 @@
 --Introduction
 
 This is a Portal GLaDOS voice generator based on preprocessing code for glados voice dataset from https://glados.biringa.com
-This was made through Tacotron and Tensorflow.
+This was made through Tacotron and Tensorflow. This is insipred by Kairess's code
+https://github.com/kairess/tacotron
+
+
 Testing data is already provided, as it takes ~140 gb of space to train
+Currently trying to adapt into tacotron 2 model 
 
 -- Getting the data
 
@@ -30,7 +34,6 @@ python demo_server.py --checkpoint tmp/model.ckpt-200000
 
 When the audio is too long (+20 seconds?) the training module voice often sputters and dies.
 This also becomes a problem when there's a word it doesn't recognize, such as Nervegear
-Currently working to fix these problems, possibly implementing instead in tacotron 2
 
 
 ## Original Tacotron Documentation
