@@ -26,7 +26,7 @@ Currently trying to adapt into tacotron 2 model.
 
 -- Test
 
-There already is processed data, 
+There already is processed data, so testing without training is fine.
 
 python demo_server.py --checkpoint tmp/model.ckpt-200000
 
