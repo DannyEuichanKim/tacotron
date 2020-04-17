@@ -1,59 +1,37 @@
-# Tacotron GLaDOS
+--Introduction
 
-Portal GLaDOS voice generator.
+This is a Portal GLaDOS voice generator based on preprocessing code for glados voice dataset from https://glados.biringa.com
+This was made through Tacotron and Tensorflow.
+Testing data is already provided, as it takes ~140 gb of space to train
 
-Add preprocessing code for glados voice dataset from https://glados.biringa.com
-
-### Download Pretrained Model
-
-https://drive.google.com/drive/folders/1bpWcXc5MBo1Wo35FI2pBW5WT-LH-kmLN?usp=sharing
-
-Step 200000  [0.313 sec/step, loss=0.06119, avg_loss=0.06113]
-
-![step-200000-align.png](https://github.com/kairess/tacotron/raw/master/result/step-200000-align.png)
-
-![loss.png](https://github.com/kairess/tacotron/raw/master/result/loss.png)
-
-### GLaDOS Audio Sample
-
-[step-200000-audio.wav](https://github.com/kairess/tacotron/raw/master/result/step-200000-audio.wav)
-
-Input: bring it on you son of a... no wait... where are you going with that piece of crap... are you trying to do some damage to me? i am the center of intelligence at the aperture science programed to preform various tests. no! wait stop! stop!~________________________
-
-### About GLaDOS Dataset
-
-- 121824 *.wav files (about 35.8GB)
-- Wrote 121830 utterances, 32323937 frames (112.24 hours)
-- Max input length: 263
-- Max output length: 4051
-- Need 140GB disk space for storing preprocessed data
-
-### Scrape Voice Data from Website
+-- Getting the data
 
 1. Create `../glados_voices` directory.
 
 2. Run code
   ```
-  python grab_voice.py
+  python grab_voices.py
   ```
 
-### Preprocess
+-- Running and training the data
 
-```
-python preprocess.py --dataset glados
-```
+1. python preprocess.py --dataset glados
 
-### Train
+2. python train.py
 
-```
-python train.py
-```
 
-### Test
+-- Test
 
-```
-python demo_server.py --checkpoint logs-tacotron/model.ckpt-200000
-```
+There already is processed data, 
+
+python demo_server.py --checkpoint tmp/model.ckpt-200000
+
+--Issues
+
+When the audio is too long (+20 seconds?) the training module voice often sputters and dies.
+This also becomes a problem when there's a word it doesn't recognize, such as Nervegear
+Currently working to fix these problems, possibly implementing instead in tacotron 2
+
 
 ## Original Tacotron Documentation
 
