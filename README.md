@@ -5,8 +5,8 @@ This was made through Tacotron and Tensorflow. This is insipred by Kairess's cod
 https://github.com/kairess/tacotron
 
 
-Testing data is already provided, as it takes ~140 gb of space to train
-Currently trying to adapt into tacotron 2 model 
+Testing data is already provided, as it takes ~140 gb of space to train.
+Currently trying to adapt into tacotron 2 model.
 
 -- Getting the data
 
